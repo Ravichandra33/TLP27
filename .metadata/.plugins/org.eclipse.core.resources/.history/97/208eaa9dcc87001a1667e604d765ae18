@@ -1,0 +1,84 @@
+package com.ebanking.master;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class branchcreation2 {
+	
+	@FindBy(id="txtbName")
+	WebElement Brnam;
+	
+	@FindBy(xpath="//*[@id=\"txtAdd1\"]")
+	WebElement add1;
+	
+	@FindBy(id="txtZip")
+	WebElement Zpcde;
+	
+	@FindBy(id="lst_counrtyU")
+	WebElement cntry;
+	
+	
+	@FindBy(id="lst_stateI")
+	WebElement sate;
+	
+	@FindBy(id="lst_cityI")
+	WebElement crty;
+	
+	@FindBy(id="btn_insert")
+	WebElement sbm;
+	
+	
+	   
+	   public void Brcr2() throws InterruptedException
+		{
+		 
+		   Brnam.sendKeys("fddsfsdfdds");
+		   add1.sendKeys("#fdfdfff556");
+		   Zpcde.sendKeys("45543");
+		   cntry.sendKeys("INDIA");
+		   Thread.sleep(2000);
+		   sate.sendKeys("Delhi");
+		   Thread.sleep(2000);
+		   crty.sendKeys("Delhi");
+		   sbm.click();
+		   
+		   
+		   
+		   
+
+		}
+	   
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+}

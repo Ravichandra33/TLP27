@@ -1,0 +1,8 @@
+Employer Name###Login Password###Role###Branch
+sathishchandra###@j4h5h4gh45###kamal###Abc123
+kishorechandra###$hdfbbnbnbf###testIT###abc45123
+ravichandra###$trtr565bnbnbfdn###RAM123###abcbranch
+chandrakala###%gvdbvfdfvbv565###Accountant###abcd24
+nagaraju###dfdfvhdgfe445345###assistantmanager###abcdef
+narandra###nbdnbdnfb565463###amanager###Adayar
+sharathakumar###bnvbnbnbnfgbf45465###s/w testing###Addington

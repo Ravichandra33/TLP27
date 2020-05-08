@@ -1,0 +1,18 @@
+package com.ebanking.scripts;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class LoginScript {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	//launch Webdriver
+		WebDriver driver=new FirefoxDriver();
+		
+		//Launch Url
+	driver.get("http://183.82.100.55/ranford2/home.aspx");
+	}
+
+}

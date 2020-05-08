@@ -1,0 +1,13 @@
+package com.ebanking.master;
+
+import org.testng.annotations.Test;
+
+public class Rolecreation extends Base
+{
+@Test
+	public void rolec() throws InterruptedException {
+		
+		lb.RoleCreation("bankemployee", "E");
+	}
+
+}

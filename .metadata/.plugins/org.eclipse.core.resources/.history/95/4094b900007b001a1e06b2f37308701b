@@ -1,0 +1,108 @@
+package com.ebanking.scripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class LoginScript {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	//launch Webdriver
+		WebDriver driver=new FirefoxDriver();
+		
+		//Launch Url
+	driver.get("http://183.82.100.55/ranford2/home.aspx");
+	
+	
+	//Maximize
+	driver.manage().window().maximize();
+	
+	//admin login
+	driver.findElement(By.id("txtuId")).sendKeys("Admin");
+	driver.findElement(By.id("txtPword")).sendKeys("M1ndq");
+	driver.findElement(By.xpath("//*[@id=\"login\"]")).click();
+	
+	
+	
+	//Branches
+	
+			driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a/img")).click();
+			driver.findElement(By.id("BtnNewBR")).click();
+			
+			
+			
+			
+			
+			//branchname
+			driver.findElement(By.id("txtbName")).sendKeys("Mindqsys@12323");
+			//Add 1
+			driver.findElement(By.xpath("//*[@id=\"txtAdd1\"]")).sendKeys("Mindqsys@123ddfdfdf");
+		    //Zipcode
+			driver.findElement(By.id("txtZip")).sendKeys("34234");
+			//dropdown
+			
+			Select Ctry=new Select(driver.findElement(By.id("lst_counrtyU")));
+			Ctry.selectByVisibleText("INDIA");
+			
+			//State
+			Select state=new Select(driver.findElement(By.id("lst_stateI")));
+			state.selectByVisibleText("Andhra Pradesh");
+			
+			
+			//city/
+			Select city=new Select(driver.findElement(By.id("lst_cityI")));
+			city.selectByVisibleText("Hyderabad");
+			
+			//submit
+			driver.findElement(By.id("btn_insert")).click();
+			
+		
+			//Alert
+			
+			driver.switchTo().alert().accept();
+	
+			
+			//Home button
+	driver.findElement(By.xpath("//*[@id=\"Table_01\"]/tbody/tr/td[1]/a/img")).click();		
+			//Role creation
+	
+	driver.findElement(By.xpath("//*[@id=\"Table_01\"]/tbody/tr[2]/td/table/tbody/tr[4]/td/a/img")).click();		
+	
+	driver.findElement(By.id("btnRoles")).click();
+	
+	driver.findElement(By.id("txtRname")).sendKeys("Computer");
+	
+	Select RoleType=new Select(driver.findElement(By.id("lstRtypeN")));
+	
+	RoleType.selectByVisibleText("E");
+	
+	//Alert
+	driver.switchTo().alert().accept();
+	
+	//Emp creation
+	driver.findElement(By.xpath("//*[@id=\"Table_02\"]/tbody/tr[2]/td/table/tbody/tr[8]/td/a/img")).click();
+	
+	driver.findElement(By.xpath("BtnNew")).click();
+	
+	driver.findElement(By.id("txtUname")).sendKeys("ravishetty");
+	
+	driver.findElement(By.id("txtLpwd")).sendKeys("chandra123");
+	
+	Select Role=new Select(driver.findElement(By.id("lst_Roles")));
+	Role.selectByVisibleText("Computer");
+	
+	Select Branch=new Select(driver.findElement(By.id("lst_Branch")));
+	Branch.selectByVisibleText("Mindqsys@12323");
+    //submit
+	driver.findElement(By.xpath("BtnSubmit")).click();
+	
+	//Log out 
+	driver.findElement(By.xpath("//*[@id=\"Table_01\"]/tbody/tr/td[3]/a/img")).click();
+			//close Application
+	driver.quit();
+	}
+
+}

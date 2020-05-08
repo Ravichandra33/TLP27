@@ -1,0 +1,5 @@
+RoleName###RoleType###Results
+clerkAxisbk###E
+typistsbiBk###E
+POAndhraBK###E
+ManagerSBiBK###E

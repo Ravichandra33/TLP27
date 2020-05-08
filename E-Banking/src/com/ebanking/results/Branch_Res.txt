@@ -1,0 +1,8 @@
+Branch Name###Address1###Zip Code###Country###State###City###Results
+americatools###fdfds#edf###24343###INDIA###Tamil Nadu###CHENNAI&&&&Branch name already Exist
+ammerpetbranch###SDFDF@434###23434###UK###England###MANCHESTER&&&&Branch name already Exist
+srknagarbranch###DDFD%5454###45456###USA###NewYork###Watertown&&&&Branch name already Exist
+manualtools###DFDFDFDF$#565FFFF###33245###UK###Scottland###GLASGOW&&&&Branch name already Exist
+mvktools###FVFFG###45567###USA###Washington###seattle&&&&Branch name already Exist
+hyderabadtools###FFFG###23234###INDIA###Tamil Nadu###CHENNAI&&&&Branch name already Exist
+secunderabadtoolsbranch###FDGFGFG###45623###UK###Yorkshire###Bradford&&&&Branch name already Exist

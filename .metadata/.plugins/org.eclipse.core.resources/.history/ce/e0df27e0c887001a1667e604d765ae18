@@ -1,0 +1,41 @@
+package com.ebanking.master;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+public class Exepom {
+	
+	@Test
+	public void pom() throws InterruptedException
+	{
+		WebDriver driver = new FirefoxDriver();
+
+		driver.manage().window().maximize();
+		driver.get("http://183.82.100.55/ranford2");
+		
+		
+		 RanfordHp RHP=PageFactory.initElements(driver,RanfordHp.class);
+		  RHP.login();
+		  
+		AdminHp AHP=PageFactory.initElements(driver,AdminHp.class);
+		  AHP.Br();
+		  
+		/*AdminHp Ahp = PageFactory.initElements(driver, AdminHp.class);
+		  Ahp.rle();
+		  
+		  AdminHp ahp = PageFactory.initElements(driver, AdminHp.class);
+		  ahp.emp();*/
+		  
+		  Branchcreation1 Br = PageFactory.initElements(driver, Branchcreation1.class);
+		  Br.Brcr2();
+		  branchalert Bralt = PageFactory.initElements(driver, branchalert.class);
+		  Bralt.aler();
+	
+		  branchcreation2 Brhme = PageFactory.initElements(driver, branchcreation2.class);
+		  Brhme.hmebr();
+	
+	}
+	
+}

@@ -1,0 +1,212 @@
+package com.Qedge;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Sample {
+	
+					
+	
+
+		public static void main(String[] args) throws InterruptedException {
+			// TODO Auto-generated method stub
+	    String Expectvalue = "Ranford Bank";
+		//launch Webdriver
+		
+		 
+	    //WebDriver driver=new FirefoxDriver();
+			WebDriver driver=new ChromeDriver();
+			
+			//Launch Url
+		driver.get("http://183.82.100.55/ranford2/home.aspx");
+		
+		
+		//Maximize
+		driver.manage().window().maximize();
+		String Actval=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[4]/p/span")).getText();
+		//Comparision
+		
+		if (Expectvalue.equalsIgnoreCase(Actval)) 
+		{
+		System.out.println("Ranford Application Launch Succ");	
+		}
+		else
+		{
+			System.out.println("Ranford Application Not Launch");	
+		}
+		
+		
+		//GetTitle
+		/*String tit = driver.getTitle();
+		System.out.println(tit);
+		*/
+		
+		
+		 
+		//admin login
+		 Expectvalue = "Welcome to Admin";
+		
+		 Thread.sleep(3000);
+		driver.findElement(By.id("txtuId")).sendKeys("Admin");
+		driver.findElement(By.id("txtPword")).sendKeys("M1ndq");
+		driver.findElement(By.xpath("//*[@id=\"login\"]")).click();
+		
+		Actval=driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[4]/strong/font/font")).getText();
+		
+		//Comparision
+		
+				if (Expectvalue.equalsIgnoreCase(Actval)) 
+				{
+				System.out.println("Admin Login Succ");	
+				}
+				else
+				{
+					System.out.println("Admin Login Failed");	
+				}
+				
+		
+		//Branches
+		 Expectvalue="Sucessfully";
+		 Thread.sleep(5000);
+		 
+				driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/a/img")).click();
+				driver.findElement(By.id("BtnNewBR")).click();
+				
+				
+				
+				
+				
+				//branchname
+				driver.findElement(By.id("txtbName")).sendKeys("SOCIAL123FG976332CHANDRARAVI");
+			
+				//Add 1
+				driver.findElement(By.xpath("//*[@id=\"txtAdd1\"]")).sendKeys("Mindqsys@123ddfdfdf");
+			    //Zipcode
+				driver.findElement(By.id("txtZip")).sendKeys("34234");
+				//dropdown
+				
+				Select Ctry=new Select(driver.findElement(By.id("lst_counrtyU")));
+				Ctry.selectByVisibleText("INDIA");
+				
+				//State
+				Select state=new Select(driver.findElement(By.id("lst_stateI")));
+				state.selectByVisibleText("Andhra Pradesh");
+				
+				  
+				//city/
+				Select city=new Select(driver.findElement(By.id("lst_cityI")));
+				city.selectByVisibleText("Hyderabad");
+				
+				//submit
+				driver.findElement(By.id("btn_insert")).click();
+				Thread.sleep(4000);
+			  
+				//Alert
+				
+				Actval=driver.switchTo().alert().getText();
+		   driver.switchTo().alert().accept();
+				
+				//comparison
+		   if (Actval.contains(Expectvalue)) {
+			System.out.println("Branch created");
+		} else {
+			System.out.println("already Branch exist");
+		}
+				
+				
+				//Home button
+		driver.findElement(By.xpath("//*[@id=\"Table_01\"]/tbody/tr/td[1]/a/img")).click();		
+				//Role creation
+		Expectvalue = "Sucessfully";
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"Table_01\"]/tbody/tr[2]/td/table/tbody/tr[4]/td/a/img")).click();		
+		
+		driver.findElement(By.xpath("//*[@id=\"btnRoles\"]")).click();
+		
+		driver.findElement(By.id("txtRname")).sendKeys("COMPANYWEFORGHGOTRAVICHANDRA");
+		
+		Select RoleType=new Select(driver.findElement(By.id("lstRtypeN")));
+		
+		RoleType.selectByVisibleText("E");
+		
+		driver.findElement(By.id("btninsert")).click();
+		Thread.sleep(4000);
+		//Alert
+		Actval=driver.switchTo().alert().getText();
+		driver.switchTo().alert().accept();
+		
+		//comparison
+		   if (Actval.contains(Expectvalue)) {
+			System.out.println("Role created");
+		} 
+		   else {
+			System.out.println("already Role existed");
+		}
+				
+		
+		
+		
+		
+		//Emp creation
+		Expectvalue="Successfully";
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//*[@id=\"Table_02\"]/tbody/tr[2]/td/table/tbody/tr[8]/td/a/img")).click();
+		
+		driver.findElement(By.xpath("//*[@id=\"BtnNew\"]")).click();
+		Thread.sleep(4000);
+
+		driver.findElement(By.id("txtUname")).sendKeys("CHANDRASHEETY");
+		
+		driver.findElement(By.id("txtLpwd")).sendKeys("chandra123@");
+		
+		Select Role=new Select(driver.findElement(By.id("lst_Roles")));
+		Role.selectByVisibleText("COMPANYWEFORGHGOTRAVICHANDRA");
+		
+		Select Branch=new Select(driver.findElement(By.xpath("//*[@id=\"lst_Branch\"]")));
+		Branch.selectByVisibleText("SOCIAL123FG976332CHANDRARAVI");
+	    //submit
+		driver.findElement(By.xpath("//*[@id=\"BtnSubmit\"]")).click();
+		Thread.sleep(2000);
+		
+		Actval=driver.switchTo().alert().getText();
+		driver.switchTo().alert().accept();
+		Thread.sleep(2000);
+		//comparison
+		   if (Actval.contains(Expectvalue)) {
+			System.out.println("Employee created");
+		} else {
+			System.out.println("already Employee  existed");
+		}
+		
+		
+		
+		
+		
+		
+		
+			//Home button
+			driver.findElement(By.xpath("/html/body/div/form/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr/td[1]/a/img")).click();		
+			
+		//Log out 
+	 Expectvalue="Welcome to Ranford Bank - Welcome to Personalized Banking";
+
+		driver.findElement(By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td[4]/table/tbody/tr/td[3]/a/img")).click();
+		
+		Actval= driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/table/tbody/tr[4]/td/table/tbody/tr[1]/td[4]/p")).getText();
+		//comparison
+		if (Actval.contains(Expectvalue)) {
+			System.out.println("Succesfully logged out");
+		} else {
+	System.out.println("succesfully not logged out");
+		}
+		//close Application
+	driver.quit();
+		
+		
+		}}
+
+

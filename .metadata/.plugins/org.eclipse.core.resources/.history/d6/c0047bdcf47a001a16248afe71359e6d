@@ -1,0 +1,15 @@
+package com.ebanking.scripts;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class LoginScript {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	//launch Webdriver
+		 = new FirefoxDriver();
+	}
+
+}
